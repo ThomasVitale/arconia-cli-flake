@@ -4,6 +4,14 @@ A [Nix Flake](https://nixos.wiki/wiki/flakes) to install the [Arconia CLI](https
 
 ## How to use it
 
+### Nix
+
+Using [Nix](https://zero-to-nix.com/concepts/nix/), you can install the Arconia CLI as follows:
+
+```shell
+nix profile install github:thomasvitale/arconia-cli-flake
+```
+
 ### Flox
 
 Using [Flox](https://flox.dev), you can install the Arconia CLI in your development environment as follows:

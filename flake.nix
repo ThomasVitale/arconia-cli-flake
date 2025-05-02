@@ -2,7 +2,7 @@
   description = "Arconia CLI";
  
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-24.11";
   };
  
   outputs = { self, nixpkgs }:
@@ -42,12 +42,6 @@
             installPhase = ''
               mkdir -p $out
               cp -r * $out/
-              ${if pkgs.stdenv.isLinux then ''
-              patchelf \
-                --set-rpath "${pkgs.stdenv.cc.cc.lib}/lib" \
-                --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \
-                $out/bin/node
-              '' else ""}
             '';
           };
         in

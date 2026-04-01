@@ -7,7 +7,7 @@
  
   outputs = { self, nixpkgs }:
     let
-      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     in
     {
@@ -17,25 +17,21 @@
  
           arconiaFor = {
             x86_64-linux = {
-              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.6.0/arconia-cli-0.6.0-linux-amd64.zip";
-              hash = "d6Hp2o38aYkoq9PHZXe6chIf2xbREdHZUiERwwmlzK4=";
+              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.12.0/arconia-cli-0.12.0-linux-amd64.zip";
+              hash = "sha256-4ip7ThifgGxtnteHiehg6zjmJZpXNLgfQeGYWLmlk0E=";
             };
             aarch64-linux = {
-              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.6.0/arconia-cli-0.6.0-linux-aarch64.zip";
-              hash = "vRWhbAhp/XRrbda0PQrQJQxI5yrs8LaN5bWhOhm0Uo4=";
-            };
-            x86_64-darwin = {
-              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.6.0/arconia-cli-0.6.0-macos-amd64.zip";
-              hash = "WIlOrCMQbdjdxfVjLzw505/mXgHf1ntBDG6JzoVxyug=";
+              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.12.0/arconia-cli-0.12.0-linux-aarch64.zip";
+              hash = "sha256-6ASZEAGkg6gWWVj7MuhtZgnJkRLdCTiDhAV2ViSg0AM=";
             };
             aarch64-darwin = {
-              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.6.0/arconia-cli-0.6.0-macos-aarch64.zip";
-              hash = "sha256-9Q1BE/ls7b+KgtLhfpvwcWPMfOKjpRHn5VCUv98AE0s=";
+              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.12.0/arconia-cli-0.12.0-macos-aarch64.zip";
+              hash = "sha256-o1Xw3/3GWkhMowifIubqrYL/j77g5Jt5+K1QPZCU1ag=";
             };
           };
           arconia = pkgs.stdenv.mkDerivation {
             pname = "arconia";
-            version = "0.6.0";
+            version = "0.12.0";
             src = pkgs.fetchurl arconiaFor.${system};
             nativeBuildInputs = [ pkgs.unzip ];
             dontStrip = true;

@@ -17,21 +17,21 @@
  
           arconiaFor = {
             x86_64-linux = {
-              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.12.0/arconia-cli-0.12.0-linux-amd64.zip";
-              hash = "sha256-4ip7ThifgGxtnteHiehg6zjmJZpXNLgfQeGYWLmlk0E=";
+              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.12.1/arconia-cli-0.12.1-linux-amd64.zip";
+              hash = "sha256-THaUpE3J/92fytuyRAAbDVMaWGea+lE/ENJEhmoFQts=";
             };
             aarch64-linux = {
-              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.12.0/arconia-cli-0.12.0-linux-aarch64.zip";
-              hash = "sha256-6ASZEAGkg6gWWVj7MuhtZgnJkRLdCTiDhAV2ViSg0AM=";
+              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.12.1/arconia-cli-0.12.1-linux-aarch64.zip";
+              hash = "sha256-i5CIaB7yJg0OpB4lZAYZCc80WnBb7fsXlncWdC/k6H8=";
             };
             aarch64-darwin = {
-              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.12.0/arconia-cli-0.12.0-macos-aarch64.zip";
-              hash = "sha256-o1Xw3/3GWkhMowifIubqrYL/j77g5Jt5+K1QPZCU1ag=";
+              url = "https://github.com/arconia-io/arconia-cli/releases/download/v0.12.1/arconia-cli-0.12.1-macos-aarch64.zip";
+              hash = "sha256-PwikE6fNoVm3xlkUCEPuu6bHHBUBzO8r0EhynGCQAUE=";
             };
           };
           arconia = pkgs.stdenv.mkDerivation {
             pname = "arconia";
-            version = "0.12.0";
+            version = "0.12.1";
             src = pkgs.fetchurl arconiaFor.${system};
             nativeBuildInputs = [ pkgs.unzip ];
             dontStrip = true;
